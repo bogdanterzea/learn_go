@@ -21,11 +21,11 @@ Library  Collections
 
 *** Variables ***
 ${ip_address}  192.168.1.102
-${server_path}  D:/projects/go/webDriver/src/main.exe
+${server_path}  /home/bogdanterzea/Documents/TestingGo/automated-channel-testing/src/main
 ${timeout}  20000
 ${pressDelay}  2000
 ${channel_code}  dev
-&{DATA2}=  using=text  value=Barack Gates, Bill Obama
+&{DATA2}=  using=text  value=some value
 @{DATA2Array}=  &{DATA2}
 &{Params2}=  elementData=${DATA2Array}
 &{DATA3}=  using=text  value=rokudev
