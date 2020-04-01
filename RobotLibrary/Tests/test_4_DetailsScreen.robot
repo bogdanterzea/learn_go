@@ -20,18 +20,18 @@ Library  Collections
 
 
 *** Variables ***
-${ip_address}  192.168.1.94
-${server_path}  D:/projects/go/webDriver/src/main.exe
+${ip_address}  192.168.1.102
+${server_path}  /home/bogdanterzea/Documents/TestingGo/automated-channel-testing/src/main
 ${timeout}  20000
 ${pressDelay}  2000
 ${channel_code}  dev
-&{SeriesDetails}=  using=text  value=No Content to play
+&{SeriesDetails}=  using=text  value=Authenticate to watch
 @{SeriesDetailsArray}=  &{SeriesDetails}
-&{SeriesDetailsParams}=  elementData=${SeriesDetailsArray}
+&{SeriesDetailsParams}  elementData=${SeriesDetailsArray}
 &{Grid}=  using=tag  value=GridView
 @{GridArray}=  &{Grid}
 &{GridParams}=  elementData=${GridArray}
-&{MovieDetails}=  using=text  value=Play
+&{MovieDetails}=  using=text  value=Authenticate to watch
 @{MovieDetailsArray}=  &{MovieDetails}
 &{MovieDetailsParams}=  elementData=${MovieDetailsArray}
 
@@ -42,7 +42,7 @@ Check if channel exist on the device
 
 Verify is channel launched
     Launch the channel  ${channel_code}
-    Verify is channel loaded    ${channel_code}    
+    Verify is channel loaded    ${channel_code}
 
 Verify is initial screen loaded
     Verify is screen loaded    ${GridParams}
@@ -50,7 +50,7 @@ Verify is initial screen loaded
 Verify series details screen button
     Send key  Select   3
     Verify is screen loaded    ${SeriesDetailsParams}  3  4
- 
+
 Verify movies details screen button
     Send key  Back  3
     Verify is screen loaded    ${GridParams}

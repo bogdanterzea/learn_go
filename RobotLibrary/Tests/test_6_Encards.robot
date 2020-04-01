@@ -20,8 +20,8 @@ Library  Collections
 
 
 *** Variables ***
-${ip_address}  192.168.1.94
-${server_path}  D:/projects/go/webDriver/src/main.exe
+${ip_address}  192.168.1.102
+${server_path}  /home/bogdanterzea/Documents/TestingGo/automated-channel-testing/src/main
 ${timeout}  20000
 ${pressDelay}  2000
 ${channel_code}  dev
@@ -31,7 +31,7 @@ ${channel_code}  dev
 &{DetailsData}=  using=tag  value=DetailsView
 @{DetailsArray}=  &{DetailsData}
 &{DetailsParams}=  elementData=${DetailsArray}
-&{EncardData}=  using=text  value=Play again
+&{EncardData}=  using=text  value=Authenticate to watch
 @{EncardArray}=  &{EncardData}
 &{EncardParams}=  elementData=${EncardArray}
 
@@ -39,7 +39,7 @@ ${channel_code}  dev
 *** Test Cases ***
 Verify is channel launched
     Launch the channel  ${channel_code}
-    Verify is channel loaded    ${channel_code}    
+    Verify is channel loaded    ${channel_code}
 
 Verify is initial screen loaded
     Verify is screen loaded    ${GridParams}
@@ -50,7 +50,7 @@ Verify is details screen loaded
 
 Verify is playback started
     Send key  Select  3
-    Verify is playback started
+    Verify is playback started 5 1
 
 Encards
     Verify is screen loaded    ${EncardParams}  10  10

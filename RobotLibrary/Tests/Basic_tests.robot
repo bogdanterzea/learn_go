@@ -25,13 +25,14 @@ ${server_path}  /home/bogdanterzea/Documents/TestingGo/automated-channel-testing
 ${timeout}  20000
 ${pressDelay}  2000
 ${channel_code}  dev
-&{DATA2}=  using=text  value=some value
+
+&{DATA2}=  using=text value=Barack Gates, Bill Obama
 @{DATA2Array}=  &{DATA2}
 &{Params2}=  elementData=${DATA2Array}
-&{DATA3}=  using=text  value=rokudev
+&{DATA3}=  using=text  value=Please enter your username
 @{DATA3Array}=  &{DATA3}
 &{Params3}=  elementData=${DATA3Array}
-&{DATA4}=  using=text  value=rokudev
+&{DATA4}=  using=text  value=Please enter your password
 @{DATA4Array}=  &{DATA4}
 &{Params4}=  elementData=${DATA4Array}
 @{KEYS}=   down  down  down  down  select
@@ -51,7 +52,7 @@ Check if details screen showed
 Check if playback started
     ${status}  ${value}=  Run Keyword And Ignore Error  Verify is screen loaded  ${Params5}  2
     Run keyword if   "${status}"=="PASS"  Do auth
-    ...  ELSE  Send key  select
+    ...  ELSE  Send key  select 4
     Verify is playback started
 
 *** Keywords ***

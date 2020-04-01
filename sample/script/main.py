@@ -16,7 +16,7 @@
 
 from webDriver import WebDriver
 
-web_driver = WebDriver("192.168.1.94")
+web_driver = WebDriver("192.168.1.102")
 web_driver.launch_the_channel("dev")
 web_driver.verify_is_screen_loaded({"elementData": [{
 	"using": "text",

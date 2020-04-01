@@ -20,8 +20,8 @@ Library  Collections
 
 
 *** Variables ***
-${ip_address}  192.168.1.94
-${server_path}  D:/projects/go/webDriver/src/main.exe
+${ip_address}  192.168.1.102
+${server_path}  /home/bogdanterzea/Documents/TestingGo/automated-channel-testing/src/main
 ${timeout}  20000
 ${pressDelay}  2000
 ${channel_code}  dev
